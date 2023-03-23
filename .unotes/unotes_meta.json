@@ -1,0 +1,24 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "proxmox-image-build": {
+      "name": "proxmox-image-build",
+      "isOrdered": true,
+      "folders": {
+        "cloud": {
+          "name": "cloud",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {
+        "README": 0
+      }
+    }
+  },
+  "files": {
+    "README": 0
+  }
+}

@@ -65,7 +65,7 @@ function do_create_template_settings {
     qm set $VMTID --ciuser root --sshkey /tmp/keys
     
     # Assign keys to ord user
-    qm set $VMTID --ciuser ord --sshkey /tmp/keys
+    qm set $VMTID --ciuser ord --sshkey /tmp/keys --cipassword "$6$oAm.DWQx$BoiJS1Ipd6qAjfJe.eGFsGDokkMUyukBP7RpHXQP2y82WErhUkaoUT1hHJBzy0RIql6lPn990oShTm3.CfV910"
 
 
 

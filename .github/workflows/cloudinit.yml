@@ -32,7 +32,7 @@ jobs:
           # Description of the gist
           gist_description: K8S Cloud Init configuration
           # The Filename with the contents we want to mirror
-          github_file: ./proxmox-image-build/cloud/k8s-cloud.cfg.example
+          github_file: ./proxmox-image-build/cloud/k8s_cloud.cfg.example
   gist-sync:
     name: gist-sync
     runs-on: ubuntu-latest

@@ -66,50 +66,51 @@ jobs:
           # The Filename with the contents we want to mirror
           github_file: ./proxmox-image-build/cloud/scripts/per-boot/01-storage.sh
           
-      # Sync ./proxmox-image-build/cloud/scripts/per-boot/02-hostname.sh to gist
-      - name: Sync ./proxmox-image-build/cloud/scripts/per-boot/02-hostname.sh to gist
-        uses: popsiclestick/gist-sync-action@v1.2.0
-        id: set-hostname
-        with:
-          # Auth token with gist permissions
-          auth: ${{ secrets.LEGACY_TOKEN }}
-          # URL of the gist
-          gist_url: https://gist.github.com/djh00t/989f370e04f37ed5de05987df7616d40
-          # Title of the gist
-          gist_title: 02-hostname.sh
-          # Description of the gist
-          gist_description: Get hostname from RDNS and set it
-          # The Filename with the contents we want to mirror
-          github_file: ./proxmox-image-build/cloud/scripts/per-boot/02-hostname.sh
-
-      # Sync ./proxmox-image-build/cloud/scripts/per-boot/03-resolvconf.sh to gist
-      - name: Sync ./proxmox-image-build/cloud/scripts/per-boot/03-resolvconf.sh to gist
-        uses: popsiclestick/gist-sync-action@v1.2.0
-        id: static-resolv-conf
-        with:
-          # Auth token with gist permissions
-          auth: ${{ secrets.LEGACY_TOKEN }}
-          # URL of the gist
-          gist_url: https://gist.github.com/djh00t/d2afe0aa6237da8c9c87673b56755e68
-          # Title of the gist
-          gist_title: 03-resolvconf.sh
-          # Description of the gist
-          gist_description: Remove dynamic resolv.conf and replace with static
-          # The Filename with the contents we want to mirror
-          github_file: ./proxmox-image-build/cloud/scripts/per-boot/03-resolvconf.sh
-
-      # Sync ./proxmox-image-build/cloud/scripts/per-boot/04-route.sh to gist
-      - name: Sync ./proxmox-image-build/cloud/scripts/per-boot/04-route.sh to gist
-        uses: popsiclestick/gist-sync-action@v1.2.0
-        id: set-mgmt-routes
-        with:
-          # Auth token with gist permissions
-          auth: ${{ secrets.LEGACY_TOKEN }}
-          # URL of the gist
-          gist_url: https://gist.github.com/djh00t/7ea05500acdbcf201df4057e436d8851
-          # Title of the gist
-          gist_title: 04-route.sh
-          # Description of the gist
-          gist_description: Remove dynamic resolv.conf and replace with static
-          # The Filename with the contents we want to mirror
-          github_file: ./proxmox-image-build/cloud/scripts/per-boot/04-route.sh
+####      # Sync ./proxmox-image-build/cloud/scripts/per-boot/02-hostname.sh to gist
+####      - name: Sync ./proxmox-image-build/cloud/scripts/per-boot/02-hostname.sh to gist
+####        uses: popsiclestick/gist-sync-action@v1.2.0
+####        id: set-hostname
+####        with:
+####          # Auth token with gist permissions
+####          auth: ${{ secrets.LEGACY_TOKEN }}
+####          # URL of the gist
+####          gist_url: https://gist.github.com/djh00t/989f370e04f37ed5de05987df7616d40
+####          # Title of the gist
+####          gist_title: 02-hostname.sh
+####          # Description of the gist
+####          gist_description: Get hostname from RDNS and set it
+####          # The Filename with the contents we want to mirror
+####          github_file: ./proxmox-image-build/cloud/scripts/per-boot/02-hostname.sh
+####
+####      # Sync ./proxmox-image-build/cloud/scripts/per-boot/03-resolvconf.sh to gist
+####      - name: Sync ./proxmox-image-build/cloud/scripts/per-boot/03-resolvconf.sh to gist
+####        uses: popsiclestick/gist-sync-action@v1.2.0
+####        id: static-resolv-conf
+####        with:
+####          # Auth token with gist permissions
+####          auth: ${{ secrets.LEGACY_TOKEN }}
+####          # URL of the gist
+####          gist_url: https://gist.github.com/djh00t/d2afe0aa6237da8c9c87673b56755e68
+####          # Title of the gist
+####          gist_title: 03-resolvconf.sh
+####          # Description of the gist
+####          gist_description: Remove dynamic resolv.conf and replace with static
+####          # The Filename with the contents we want to mirror
+####          github_file: ./proxmox-image-build/cloud/scripts/per-boot/03-resolvconf.sh
+####
+####      # Sync ./proxmox-image-build/cloud/scripts/per-boot/04-route.sh to gist
+####      - name: Sync ./proxmox-image-build/cloud/scripts/per-boot/04-route.sh to gist
+####        uses: popsiclestick/gist-sync-action@v1.2.0
+####        id: set-mgmt-routes
+####        with:
+####          # Auth token with gist permissions
+####          auth: ${{ secrets.LEGACY_TOKEN }}
+####          # URL of the gist
+####          gist_url: https://gist.github.com/djh00t/7ea05500acdbcf201df4057e436d8851
+####          # Title of the gist
+####          gist_title: 04-route.sh
+####          # Description of the gist
+####          gist_description: Remove dynamic resolv.conf and replace with static
+####          # The Filename with the contents we want to mirror
+####          github_file: ./proxmox-image-build/cloud/scripts/per-boot/04-route.sh
+####

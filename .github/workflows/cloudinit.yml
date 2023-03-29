@@ -33,8 +33,8 @@ jobs:
           gist_description: K8S Cloud Init configuration
           # The Filename with the contents we want to mirror
           github_file: ./proxmox-image-build/cloud/k8s_cloud.cfg.example
-  gist-sync:
-    name: gist-sync
+  gist-sync-network-manager:
+    name: gist-sync-network-manager
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -54,8 +54,13 @@ jobs:
           gist_description: K8S NetworkManager configuration
           # The Filename with the contents we want to mirror
           github_file: ./proxmox-image-build/cloud/etc/NetworkManager/NetworkManager.conf
-
-      # Sync ./proxmox-image-build/cloud/scripts/per-boot/01-storage.sh to gist
+  gist-sync-storage:
+    name: gist-sync-storage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        # Sync ./proxmox-image-build/cloud/scripts/per-boot/01-storage.sh to gist
       - name: Sync ./proxmox-image-build/cloud/scripts/per-boot/01-storage.sh to gist
         uses: popsiclestick/gist-sync-action@v1.2.0
         id: mountpoints
@@ -70,7 +75,12 @@ jobs:
           gist_description: Configure mountpoints
           # The Filename with the contents we want to mirror
           github_file: ./proxmox-image-build/cloud/scripts/per-boot/01-storage.sh
-          
+  gist-sync-hostname:
+    name: gist-sync-hostname
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3          
       # Sync ./proxmox-image-build/cloud/scripts/per-boot/02-hostname.sh to gist
       - name: Sync ./proxmox-image-build/cloud/scripts/per-boot/02-hostname.sh to gist
         uses: popsiclestick/gist-sync-action@v1.2.0
@@ -86,7 +96,12 @@ jobs:
           gist_description: Get hostname from RDNS and set it
           # The Filename with the contents we want to mirror
           github_file: ./proxmox-image-build/cloud/scripts/per-boot/02-hostname.sh
-
+  gist-sync-resolvconf:
+    name: gist-sync-resolvconf
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       # Sync ./proxmox-image-build/cloud/scripts/per-boot/03-resolvconf.sh to gist
       - name: Sync ./proxmox-image-build/cloud/scripts/per-boot/03-resolvconf.sh to gist
         uses: popsiclestick/gist-sync-action@v1.2.0
@@ -102,7 +117,12 @@ jobs:
           gist_description: Remove dynamic resolv.conf and replace with static
           # The Filename with the contents we want to mirror
           github_file: ./proxmox-image-build/cloud/scripts/per-boot/03-resolvconf.sh
-
+  gist-sync-route:
+    name: gist-sync-route
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       # Sync ./proxmox-image-build/cloud/scripts/per-boot/04-route.sh to gist
       - name: Sync ./proxmox-image-build/cloud/scripts/per-boot/04-route.sh to gist
         uses: popsiclestick/gist-sync-action@v1.2.0

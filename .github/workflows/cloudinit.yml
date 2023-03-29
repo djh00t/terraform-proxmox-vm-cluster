@@ -34,8 +34,8 @@ jobs:
 ###           # The Filename with the contents we want to mirror
 ###           github_file: ./proxmox-image-build/cloud/k8s-cloud.cfg
 
-      # Sync ./proxmox-image-build/cloud/etc/NetworkManager/k8s-NetworkManager.conf to gist
-      - name: Sync ./proxmox-image-build/cloud/etc/NetworkManager/k8s-NetworkManager.conf to gist
+      # Sync ./proxmox-image-build/cloud/etc/NetworkManager/NetworkManager.conf to gist
+      - name: Sync ./proxmox-image-build/cloud/etc/NetworkManager/NetworkManager.conf to gist
         uses: popsiclestick/gist-sync-action@v1.2.0
         id: NetworkManager
         with:
@@ -44,11 +44,11 @@ jobs:
           # URL of the gist
           gist_url: https://gist.github.com/djh00t/50adea65006c6816a1243e8826e9add3
           # Title of the gist
-          gist_title: k8s-NetworkManager.conf
+          gist_title: NetworkManager.conf
           # Description of the gist
           gist_description: K8S NetworkManager configuration
           # The Filename with the contents we want to mirror
-          github_file: ./proxmox-image-build/cloud/etc/NetworkManager/k8s-NetworkManager.conf
+          github_file: ./proxmox-image-build/cloud/etc/NetworkManager/NetworkManager.conf
 
       # Sync ./proxmox-image-build/cloud/scripts/per-boot/01-storage.sh to gist
       - name: Sync ./proxmox-image-build/cloud/scripts/per-boot/01-storage.sh to gist

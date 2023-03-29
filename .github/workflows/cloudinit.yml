@@ -1,0 +1,115 @@
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+name: Publish cloudinit config files and scripts as public hidden gists
+run-name: ${{ github.actor }} is pushing new cloud-init configs to GitHub Actions 🚀
+on:
+  push:
+    paths:
+      - ".github/workflows/cloudinit.yml"
+      - "cloudinit/**"
+
+jobs:
+  gist-sync:
+    name: gist-sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Sync k8s-cloud.cfg to gist  
+      - name: Sync k8s-cloud.cfg to gist
+        uses: popsiclestick/gist-sync-action@v1.2.0
+        id: k8s-cloudinit
+        with:
+          # Auth token with gist permissions
+          auth: ${{ secrets.LEGACY_TOKEN }}
+          # URL of the gist
+          gist_url: https://gist.github.com/djh00t/cac16f1cd71029cbae555c5974d01266
+          # Title of the gist
+          gist_title: k8s-cloud.cfg
+          # Description of the gist
+          gist_description: K8S Cloud Init configuration
+          # The Filename with the contents we want to mirror
+          github_file: ./cloudinit/k8s-cloud.cfg
+
+      # Sync ./cloudinit/files/etc/NetworkManager/k8s-NetworkManager.conf to gist
+      - name: Sync ./cloudinit/files/etc/NetworkManager/k8s-NetworkManager.conf to gist
+        uses: popsiclestick/gist-sync-action@v1.2.0
+        id: NetworkManager
+        with:
+          # Auth token with gist permissions
+          auth: ${{ secrets.LEGACY_TOKEN }}
+          # URL of the gist
+          gist_url: https://gist.github.com/djh00t/50adea65006c6816a1243e8826e9add3
+          # Title of the gist
+          gist_title: k8s-NetworkManager.conf
+          # Description of the gist
+          gist_description: K8S NetworkManager configuration
+          # The Filename with the contents we want to mirror
+          github_file: ./cloudinit/files/etc/NetworkManager/k8s-NetworkManager.conf
+
+      # Sync ./cloudinit/scripts/per-boot/01-storage.sh to gist
+      - name: Sync ./cloudinit/scripts/per-boot/01-storage.sh to gist
+        uses: popsiclestick/gist-sync-action@v1.2.0
+        id: mountpoints
+        with:
+          # Auth token with gist permissions
+          auth: ${{ secrets.LEGACY_TOKEN }}
+          # URL of the gist
+          gist_url: https://gist.github.com/djh00t/d0005cb21471ed2108e72b2f4b532322
+          # Title of the gist
+          gist_title: 01-storage.sh
+          # Description of the gist
+          gist_description: Configure mountpoints
+          # The Filename with the contents we want to mirror
+          github_file: ./cloudinit/scripts/per-boot/01-storage.sh
+          
+      # Sync ./cloudinit/scripts/per-boot/02-hostname.sh to gist
+      - name: Sync ./cloudinit/scripts/per-boot/02-hostname.sh to gist
+        uses: popsiclestick/gist-sync-action@v1.2.0
+        id: set-hostname
+        with:
+          # Auth token with gist permissions
+          auth: ${{ secrets.LEGACY_TOKEN }}
+          # URL of the gist
+          gist_url: https://gist.github.com/djh00t/989f370e04f37ed5de05987df7616d40
+          # Title of the gist
+          gist_title: 02-hostname.sh
+          # Description of the gist
+          gist_description: Get hostname from RDNS and set it
+          # The Filename with the contents we want to mirror
+          github_file: ./cloudinit/scripts/per-boot/02-hostname.sh
+
+      # Sync ./cloudinit/scripts/per-boot/03-resolvconf.sh to gist
+      - name: Sync ./cloudinit/scripts/per-boot/03-resolvconf.sh to gist
+        uses: popsiclestick/gist-sync-action@v1.2.0
+        id: static-resolv-conf
+        with:
+          # Auth token with gist permissions
+          auth: ${{ secrets.LEGACY_TOKEN }}
+          # URL of the gist
+          gist_url: https://gist.github.com/djh00t/d2afe0aa6237da8c9c87673b56755e68
+          # Title of the gist
+          gist_title: 03-resolvconf.sh
+          # Description of the gist
+          gist_description: Remove dynamic resolv.conf and replace with static
+          # The Filename with the contents we want to mirror
+          github_file: ./cloudinit/scripts/per-boot/03-resolvconf.sh
+
+      # Sync ./cloudinit/scripts/per-boot/04-route.sh to gist
+      - name: Sync ./cloudinit/scripts/per-boot/04-route.sh to gist
+        uses: popsiclestick/gist-sync-action@v1.2.0
+        id: set-mgmt-routes
+        with:
+          # Auth token with gist permissions
+          auth: ${{ secrets.LEGACY_TOKEN }}
+          # URL of the gist
+          gist_url: https://gist.github.com/djh00t/7ea05500acdbcf201df4057e436d8851
+          # Title of the gist
+          gist_title: 04-route.sh
+          # Description of the gist
+          gist_description: Remove dynamic resolv.conf and replace with static
+          # The Filename with the contents we want to mirror
+          github_file: ./cloudinit/scripts/per-boot/04-route.sh

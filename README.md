@@ -18,11 +18,13 @@ The repo is laid out in 3 sections:
     └── config
 ```
 
-**proxmox-image-build** - Scripts required to build a light weight ubuntu cloud-init image with your customisations
-2. terraform-build - Terraform configs required to create VM's on Proxmox using the image created by the image build step, upload your SSH keys, run checks on the OS and install K3S on each VM.
-3. k8s - Flux configurations for all applications in the application catalogue.
+**proxmox-image-build** - Scripts required to build a light weight ubuntu cloud-init image with your customisations.
 
-Each of these directories will contain a "config" directory which should be the only place you need to go to configure the whole solution.
+**terraform-build** - Terraform configs required to create VM's on Proxmox using the image created by the image build step, upload your SSH keys, run checks on the OS and install K3S on each VM.
+
+**k8s** - Flux configurations for all applications in the application catalog.
+
+Each of these directories will contain a "config" directory which should be the only place you need to go to configure the whole solution. README's, comments and example configuration should be present throughout the repository including in every application.
 
 ## Install Instructions
 

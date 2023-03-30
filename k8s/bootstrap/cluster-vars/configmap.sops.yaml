@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: k8s-cluster-config
+    namespace: flux-system
+data:
+    CONFIG_INFRA_DOMAIN: ENC[AES256_GCM,data:wB8ECMtQezCXqzpv,iv:vPL9sVfPMun3vNSMDMr5zQ/OtSulhnfU/3+ygBvPHSw=,tag:l827guEikG147EWlYQgdqA==,type:str]
+    CONFIG_INFRA_CLUSTER: ENC[AES256_GCM,data:ArkItCOqRVxrtnAi5A==,iv:F6PpUw5+nIpoad2s4PnKkg6ECCiPC4rpZYDO3EK72bM=,tag:K1TKkz5pU65jxMwmFU554w==,type:str]
+    CONFIG_STORAGE_CLASS: ENC[AES256_GCM,data:tUlhGG3Fcx+/mg==,iv:cdz79AykUwgPyTKjKUj4DleENbZ7bz61brxp++0+rIc=,tag:KNQUDWn8yUN3IvvtBJ/DHg==,type:str]
+    #ENC[AES256_GCM,data:B8e53NnkM04NnkKUt2ONCUSPoRO7,iv:FmxxRD1u5awSQt40qxOXqxnHr5VQ4WN8LfnLyziattA=,tag:CJx9PNXKIs/QmuoS3w5/GQ==,type:comment]
+    CONFIG_K8S01_HOSTNAME: ENC[AES256_GCM,data:zqFZc7K88OCj,iv:dGUC129C08Di88pQpdgrR2tZi4o5GB9JD8XjdNEgw00=,tag:/Z6fq4oZ4vjGxuIzXN38qQ==,type:str]
+    CONFIG_K8S01_BGP_ASN: ENC[AES256_GCM,data:QMdq94M=,iv:TLMrRVu/Xyqdy+m62PHqKlz8NDg/WqBZglCYo4U/XDg=,tag:5whIQtvfmauy4x+3rN30Sw==,type:str]
+    CONFIG_K8S01_BGP_INTERNET_PEER_ASN: ENC[AES256_GCM,data:M2CHPGI=,iv:L7FqENp86vp3PIFXExr6I2npCNLek8JonrkL7+U8XAw=,tag:9ISSf4uFCV2NNRRIivCE1Q==,type:str]
+    CONFIG_K8S01_BGP_MGMT_PEER_ASN: ENC[AES256_GCM,data:ca4fj5c=,iv:7mqzWB97o7acUi4+QxB9aG4Gn6W/yAhqIu2P9EhRS2Q=,tag:OPXYqdVzsj0tkAfKTaLKTw==,type:str]
+    CONFIG_K8S01_BGP_INTERNET_PEER: ENC[AES256_GCM,data:uPxHnu275w==,iv:MR8O4mJTouKW/m0m9zzsdCbDlOGvFHcuXxQ9eHhaNxM=,tag:cd05onT8Bu2F9IDSRsCLWw==,type:str]
+    CONFIG_K8S01_BGP_INTERNET_ADDRESS: ENC[AES256_GCM,data:WHzmJV1EtA==,iv:3wDxgbKmgCjth4hjlyAfUKmHHB9dVVcWAVv2YnMs+U0=,tag:sa4pFE2VfVu9nMHk0E71Sg==,type:str]
+    CONFIG_K8S01_BGP_MGMT_ADDRESS: ENC[AES256_GCM,data:F+bQTBLycy6+MBfZ,iv:w1haWmf/3Kj3aknVgtLqnorlbf9nD9EmhC9UqQBzg58=,tag:AOuaCcfD92S/iQkhpusM5A==,type:str]
+    CONFIG_K8S01_BGP_MGMT_PEER: ENC[AES256_GCM,data:EDjVyzv7IRyfFgMm,iv:I50aLJP0+ZhzbM1CKOMywZFVJiNtoNb5OFb62UqWXGY=,tag:kBGo+dk47oJi1XKiGuy3/A==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1r52p0emgvmtszp0grtkqq3zycs82vqc82z5c5dh325f65z983ses8vf9qv
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBvRE9mU1hRYytPOW5LUDFP
+            dGxmTnpSbmt5VnFjeEVRL2x3dnRZUWtVRmlvCnp0cmhJRVgvSXFNVmo1dG9BY3ZZ
+            dU1qWXJGeEY4akRmc0xDQndLLzhkTnMKLS0tIEgyQnpEVUxRaDBDNVBFZDgvU2Fj
+            Tkt4Y1N0S3NhaG0zRFp1MjBwN0YxbmsKcPT5wHT2HUs6DhYCrIioovKQR/iJ8JL6
+            808xYDwygtXKtLYrixYjQIXKZOrtfgdcYXc4yOauaBIwEWdUKrp96g==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-03-30T13:26:19Z"
+    mac: ENC[AES256_GCM,data:gwUGu9GhNGlpFVwbS6iOVrIUuAw2KIMQaI4yOkMUYjwW2ixeg8xreqbEVbsCjlEzkZnBgUOTYSZ23GakifXHOlhKtVm0x44MnTrJJ+EQGUKvynKy0jXOc9Jq372LeIzM7ZbN40j4EWM2+UF9xx+2t+vrNHFlMWDi+i7F9U3pNgE=,iv:/GbYLq6kfdWeuqCkI0OkZk7g49D1ZRS5rk5x3aMuDa4=,tag:R0HEpWPkBoMfNQiUjpHYFg==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

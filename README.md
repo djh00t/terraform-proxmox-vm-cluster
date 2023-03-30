@@ -6,22 +6,17 @@ Terraform infrastructure as code framework for building a proxmox based k3s clus
 
 The repo is laid out in 3 sections:
 
+```
 ├── k8s
-
 │   └── apps
-
 │   └── bootstrap
-
 │   └── config
-
 ├── proxmox-image-build
-
 │   └── cloud
-
 │   └── config
-
 └── terraform-build
     └── config
+```
 
 **proxmox-image-build** - Scripts required to build a light weight ubuntu cloud-init image with your customisations
 2. terraform-build - Terraform configs required to create VM's on Proxmox using the image created by the image build step, upload your SSH keys, run checks on the OS and install K3S on each VM.

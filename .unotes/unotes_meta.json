@@ -27,7 +27,9 @@
       "name": "terraform-build",
       "isOrdered": true,
       "folders": {},
-      "files": {}
+      "files": {
+        "README": 0
+      }
     }
   },
   "files": {

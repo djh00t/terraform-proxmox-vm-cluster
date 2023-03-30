@@ -16,6 +16,18 @@
       "files": {
         "README": 0
       }
+    },
+    "k8s": {
+      "name": "k8s",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "terraform-build": {
+      "name": "terraform-build",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
     }
   },
   "files": {

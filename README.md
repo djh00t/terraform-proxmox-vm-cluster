@@ -7,12 +7,19 @@ Terraform infrastructure as code framework for building a proxmox based k3s clus
 The repo is laid out in 3 sections:
 
 ├── k8s
+
 │   └── apps
+
 │   └── bootstrap
+
 │   └── config
+
 ├── proxmox-image-build
+
 │   └── cloud
+
 │   └── config
+
 └── terraform-build
     └── config
 

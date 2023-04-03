@@ -32,3 +32,6 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Don't publish my proxmox_tools.cfg
+proxmox_tools.cfg

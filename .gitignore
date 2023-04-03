@@ -37,4 +37,4 @@ terraform.rc
 proxmox_tools.cfg
 
 # Don't publish my k8s_cloud.cfg
-cloud/k8s_cloud.cfg
+proxmox-image-build/cloud/k8s_cloud.cfg

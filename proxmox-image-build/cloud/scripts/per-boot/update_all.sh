@@ -5,11 +5,17 @@
 DIR="/etc/cloud/scripts/per-boot"
 
 URLS=(
-https://gist.githubusercontent.com/fsg-gitbot/e8729b10e585992fdff35d247319d775/raw/01-storage.sh
-https://gist.githubusercontent.com/fsg-gitbot/a54170a504b02e9f10be032689434646/raw/02-hostname.sh
-https://gist.githubusercontent.com/fsg-gitbot/309947929f56abd075c644c000f01c8d/raw/03-resolvconf.sh
-https://gist.githubusercontent.com/fsg-gitbot/2eda62264e829345678662bc5477ef05/raw/04-route.sh
+https://gist.githubusercontent.com/djh00t/d0005cb21471ed2108e72b2f4b532322/raw/01-storage.sh
+https://gist.githubusercontent.com/djh00t/989f370e04f37ed5de05987df7616d40/raw/02-hostname.sh
+https://gist.githubusercontent.com/djh00t/d2afe0aa6237da8c9c87673b56755e68/raw/03-resolvconf.sh
+https://gist.githubusercontent.com/djh00t/7ea05500acdbcf201df4057e436d8851/raw/04-route.sh
 )
+
+# Make sure $DIR exists, if it doesn't, create it otherwise skip
+if [ ! -d $DIR ]; then
+        mkdir -p $DIR
+fi
+
 
 # Download gists
 for url in ${URLS[@]};do

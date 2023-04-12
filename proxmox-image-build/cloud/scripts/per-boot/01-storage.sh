@@ -163,8 +163,8 @@ for DISK in $DISKS; do
         # Make sure that the mount point exists in /data, if not create it
         if [ ! -d "/data/$MOUNTPOINT" ]; then
             echo -e "| STORAGE\tINFO\t\tCreating mount point /data/$MOUNTPOINT"
-            mkdir -p /data/$MOUNTPOINT
-            if $? -eq 0; then
+            ERR=$(mkdir -p /data/$MOUNTPOINT;echo $?)
+            if [ $ERR -eq 0 ]; then
                 echo -e "| STORAGE\tOK\t\tMount point created:\t/data/$MOUNTPOINT"
             else
                 echo -e "| STORAGE\tFAIL\t\tMount point had a creation error:\t/data/$MOUNTPOINT"
@@ -176,8 +176,8 @@ for DISK in $DISKS; do
         # Make sure the mount point exists in /etc/fstab, if not add it
         if ! grep -q "/data/$MOUNTPOINT" /etc/fstab; then
             echo -e "| STORAGE\tINFO\t\tAdding mount point to /etc/fstab"
-            echo -e "/dev/$DISK\t/data/$MOUNTPOINT\txfs\tnoatime,nodiratime,inode64,logbsize=256k\t0 0" >>/etc/fstab
-            if $? -eq 0; then
+            ERR=$(echo -e "/dev/$DISK\t/data/$MOUNTPOINT\txfs\tnoatime,nodiratime,inode64,logbsize=256k\t0 0" >>/etc/fstab;echo $?)
+            if [ $ERR -eq 0 ]; then
                 echo -e "| STORAGE\tOK\t\tMount point added to /etc/fstab"
             else
                 echo -e "| STORAGE\tFAIL\t\tMount point had a /etc/fstab error"
@@ -188,8 +188,8 @@ for DISK in $DISKS; do
 
         # Mount the disk
         echo -e "| STORAGE\tINFO\t\tMounting disk:\t\t$DISK"
-        mount /data/$MOUNTPOINT
-        if $? -eq 0; then
+        ERR=$(mount /data/$MOUNTPOINT;echo $?)
+        if [ $ERR -eq 0 ]; then
             echo -e "| STORAGE\tOK\t\tDisk mounted:\t\t$DISK"
         else
             echo -e "| STORAGE\tFAIL\t\tDisk had a mount error:\t\t$DISK"
